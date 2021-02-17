@@ -12,6 +12,7 @@ class SignUp extends Component {
     super(props)
 
     this.state = {
+      username: '',
       email: '',
       password: '',
       passwordConfirmation: ''
@@ -37,7 +38,7 @@ class SignUp extends Component {
       }))
       .then(() => history.push('/'))
       .catch(error => {
-        this.setState({ email: '', password: '', passwordConfirmation: '' })
+        this.setState({ username: '', email: '', password: '', passwordConfirmation: '' })
         msgAlert({
           heading: 'Sign Up Failed with error: ' + error.message,
           message: messages.signUpFailure,
@@ -47,13 +48,24 @@ class SignUp extends Component {
   }
 
   render () {
-    const { email, password, passwordConfirmation } = this.state
+    const { username, email, password, passwordConfirmation } = this.state
 
     return (
       <div className="row">
         <div className="col-sm-10 col-md-8 mx-auto mt-5">
           <h3>Sign Up</h3>
           <Form onSubmit={this.onSignUp}>
+            <Form.Group controlId="username">
+              <Form.Label>Username</Form.Label>
+              <Form.Control
+                required
+                type="username"
+                name="username"
+                value={username}
+                placeholder="Enter Username"
+                onChange={this.handleChange}
+              />
+            </Form.Group>
             <Form.Group controlId="email">
               <Form.Label>Email address</Form.Label>
               <Form.Control
@@ -61,7 +73,7 @@ class SignUp extends Component {
                 type="email"
                 name="email"
                 value={email}
-                placeholder="Enter email"
+                placeholder="Enter Email"
                 onChange={this.handleChange}
               />
             </Form.Group>
@@ -72,7 +84,7 @@ class SignUp extends Component {
                 name="password"
                 value={password}
                 type="password"
-                placeholder="Password"
+                placeholder="Enter Password"
                 onChange={this.handleChange}
               />
             </Form.Group>
