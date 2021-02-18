@@ -5,10 +5,18 @@ import { v4 as uuid } from 'uuid'
 import AuthenticatedRoute from './components/AuthenticatedRoute/AuthenticatedRoute'
 import AutoDismissAlert from './components/AutoDismissAlert/AutoDismissAlert'
 import Header from './components/Header/Header'
+
+// import auth
 import SignUp from './components/SignUp/SignUp'
 import SignIn from './components/SignIn/SignIn'
 import SignOut from './components/SignOut/SignOut'
 import ChangePassword from './components/ChangePassword/ChangePassword'
+
+// import post components
+import CreatePost from './components/Posts/CreatePost/CreatePost'
+import PostIndexAll from './components/Posts/IndexAllPosts/IndexAllPosts'
+import PostShow from './components/Posts/ShowPost/ShowPost'
+import UpdatePost from './components/Posts/UpdatePost/UpdatePost'
 
 class App extends Component {
   constructor (props) {
@@ -64,6 +72,18 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/create-post' render={() => (
+            <CreatePost msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/index' render={() => (
+            <PostIndexAll msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/posts/:id' render={() => (
+            <PostShow msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/update-post/:id' render={() => (
+            <UpdatePost msgAlert={this.msgAlert} user={user} />
           )} />
         </main>
       </Fragment>
