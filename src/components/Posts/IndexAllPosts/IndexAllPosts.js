@@ -3,6 +3,16 @@ import Card from 'react-bootstrap/Card'
 
 import { postIndexAll } from './../../../api/posts'
 
+const cardContainerLayout = {
+  display: 'inline-flex',
+  justifyContent: 'center',
+  flexFlow: 'row wrap',
+  marginLeft: -600,
+  marginRight: -600,
+  marginTop: -150,
+  padding: 200
+}
+
 class PostIndexAll extends Component {
   constructor (props) {
     super(props)
@@ -39,24 +49,19 @@ class PostIndexAll extends Component {
     }
 
     const postsJsx = posts.map(post => (
-      <Card key={post._id} className='content-bg' style={{ border: '1px solid #FFFF00', margin: '10px', padding: '10px', width: '25%', marginTop: '10px' }}>
+      <Card key={post._id} className='content-bg' style={{ border: '5px solid #2e0854', margin: '5px', padding: '5px', width: '17%', marginTop: '10px' }}>
+        <Card.Img src={post.imageURL} style={{ height: '18rem' }} />
         <Card.Body>
           <Card.Title>{post.title}</Card.Title>
-          <Card.Subtitle className="mb-2 text-muted"><img src={post.imageURL} /></Card.Subtitle>
           <Card.Text>{post.content}</Card.Text>
-          <Card.Link href={`#posts/${post._id}`}>View Comments</Card.Link>
+          <Card.Link className='content-sm' href={`#posts/${post._id}`}> Click Here To Learn More!</Card.Link>
         </Card.Body>
       </Card>
     ))
 
     return (
-      <div>
-        <h2>Welcome</h2>
-        <ul>
-          <div style={{ whiteSpace: 'pre-wrap' }}>
-            {postsJsx.reverse()}
-          </div>
-        </ul>
+      <div className='content-md' style={cardContainerLayout}>
+        { postsJsx.reverse() }
       </div>
     )
   }

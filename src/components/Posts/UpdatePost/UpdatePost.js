@@ -105,6 +105,17 @@ class UpdatePost extends Component {
             />
           </Form.Group>
 
+          <Form.Group controlId="formBasicPicture">
+            <Form.Label>Image</Form.Label>
+            <Form.Control
+              img="true"
+              type="text"
+              name="imageURL"
+              placeholder="Enter Image URL Here"
+              onChange={this.handleChange}
+            />
+          </Form.Group>
+
           <Form.Group controlId="formBasicContent">
             <Form.Label>Content</Form.Label>
             <Form.Control

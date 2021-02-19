@@ -268,7 +268,8 @@ class PostShow extends Component {
 
       showDisplay = (
         <div>
-          <h3>{post.title}</h3>
+          <h1>{post.title}</h1>
+          <img src={post.imageURL} width="300" height="300" />
           <div className='content-bg' style={{ border: '1px solid black', borderRadius: '4px', margin: '10px', padding: '10px' }}>
             <h6 style={{ whiteSpace: 'pre-wrap' }}>
               {post.content}

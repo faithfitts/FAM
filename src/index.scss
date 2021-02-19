@@ -1,1 +1,36 @@
+$primary: #2e0854;
+$secondary: #114b5f;
+
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital@1&family=Philosopher&display=swap');
+
+$content-bg: #f5efe7;
+
+.content-bg {
+  background-color: $content-bg;
+  color: #2e0854;
+}
+
+.content-sm {
+  color: green;
+  text-decoration: underline
+}
+
+.content-md {
+  padding: 50px;
+  display: 'flex';
+  justifyContent: 'center';
+  flexFlow: 'row wrap'
+}
+
+body {
+  font-family: 'Philosopher', sans-serif;
+}
+
+#card-body {
+  font-family: 'Amiri', serif;
+  text-align: center;
+  font-size: 30px;
+  margin: 10px;
+  width: 1000px
+}
