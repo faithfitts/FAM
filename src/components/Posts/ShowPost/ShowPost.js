@@ -209,10 +209,11 @@ class PostShow extends Component {
 
       ))
 
+      // for all users
       showDisplay = (
         <div>
-          <h3>{post.title}</h3>
-          <h5>User: {post.username}</h5>
+          <h3 style={{ padding: '100px' }} >{post.title}</h3>
+          <img src={post.imageURL} width="300" height="300" />
           <div className='content-bg' style={{ border: '1px solid black', margin: '10px', padding: '10px' }}>
             <h6 style={{ whiteSpace: 'pre-wrap' }}>
               {post.content}
@@ -234,12 +235,14 @@ class PostShow extends Component {
       )
     } else if (!updateCommentClicked && !showUpdateCommentModal && commentsList !== null) {
       const commentsJsx = commentsList.map(comment => (
-        <Card key={comment._id} className='content-bg' style={{ width: '100%', marginTop: '10px' }}>
+        <Card key={comment._id} className='content-bg' style={{ width: '100%', marginTop: '8px', padding: '5px' }}>
           <Card.Body>
-            <Card.Text style={{ color: 'yellow', fontSize: '12px' }}>
+            <Card.Text style={{ color: 'blue', fontSize: '14px', fontWeight: 'bold' }}>
+              <span>
+                {comment.owner.email} commented:</span>
             </Card.Text>
             <br/>
-            <div style={{ whiteSpace: 'pre-wrap' }}>
+            <div style={{ whiteSpace: 'pre-wrap', marginTop: '-30px', padding: '-20px' }}>
               {comment.content}
             </div>
             {comment.owner._id === user._id
@@ -266,6 +269,7 @@ class PostShow extends Component {
         </Card>
       ))
 
+      // for user that made the post
       showDisplay = (
         <div>
           <h1>{post.title}</h1>

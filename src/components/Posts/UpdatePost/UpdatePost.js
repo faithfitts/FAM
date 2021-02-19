@@ -14,7 +14,6 @@ class UpdatePost extends Component {
         title: '',
         imageURL: '',
         content: '',
-        liked: false,
         comments: []
       },
       createId: null,
