@@ -16,6 +16,7 @@ const UnAuthHome = () => {
       <Card.Body id="card-body">
         <Card.Header>{Description.name}</Card.Header>
         <Card.Header>{Description.desciption}</Card.Header>
+        <Card.Header style={{ fontSize: '20px' }}>{Description.disclaimer}</Card.Header>
       </Card.Body>
     </Card>
   )
