@@ -13,7 +13,6 @@ class CreatePost extends Component {
         title: '',
         imageURL: '',
         content: '',
-        liked: false,
         comments: []
       },
       createId: null
@@ -62,6 +61,7 @@ class CreatePost extends Component {
 
     return (
       <div>
+        <h3 style={{ marginTop: '30px', marginBottom: '-10px', fontSize: '40px' }}>Create Your Post!</h3>
         <PostForm
           post={post}
           handleChange={this.handleChange}

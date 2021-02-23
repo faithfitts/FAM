@@ -178,10 +178,13 @@ class PostShow extends Component {
       const commentsJsx = commentsList.map(comment => (
         <Card key={comment._id} className='content-bg' style={{ width: '100%', marginTop: '10px' }}>
           <Card.Body>
-            <Card.Text style={{ color: 'yellow', fontSize: '12px' }}>
+            <Card.Text style={{ marginBottom: '30px', color: '#195839', fontSize: '14px', fontWeight: 'bold' }}>
+              <span>
+                {comment.owner.email} commented:
+              </span>
             </Card.Text>
             <br/>
-            <div style={{ whiteSpace: 'pre-wrap' }}>
+            <div style={{ marginTop: '-40px', whiteSpace: 'pre-wrap' }}>
               {comment.content}
             </div>
             {comment.owner._id === user._id
@@ -212,14 +215,14 @@ class PostShow extends Component {
       // for all users
       showDisplay = (
         <div>
-          <h3 style={{ padding: '100px' }} >{post.title}</h3>
+          <h3 style={{ marginTop: '10px' }} >{post.title}</h3>
           <img src={post.imageURL} width="300" height="300" />
           <div className='content-bg' style={{ border: '1px solid black', margin: '10px', padding: '10px' }}>
             <h6 style={{ whiteSpace: 'pre-wrap' }}>
               {post.content}
             </h6>
           </div>
-          <h5>Comments:</h5>
+          <h5 style={{ marginTop: '40px' }}>Comments:</h5>
           <div className="showCommentContainer">
             <ul>
               {commentsJsx}
@@ -237,9 +240,10 @@ class PostShow extends Component {
       const commentsJsx = commentsList.map(comment => (
         <Card key={comment._id} className='content-bg' style={{ width: '100%', marginTop: '8px', padding: '5px' }}>
           <Card.Body>
-            <Card.Text style={{ color: 'blue', fontSize: '14px', fontWeight: 'bold' }}>
+            <Card.Text style={{ marginBottom: '20px', color: '#195839', fontSize: '14px', fontWeight: 'bold' }}>
               <span>
-                {comment.owner.email} commented:</span>
+                {comment.owner.email} commented:
+              </span>
             </Card.Text>
             <br/>
             <div style={{ whiteSpace: 'pre-wrap', marginTop: '-30px', padding: '-20px' }}>
@@ -269,10 +273,10 @@ class PostShow extends Component {
         </Card>
       ))
 
-      // for user that made the post
+      // for admin
       showDisplay = (
         <div>
-          <h1>{post.title}</h1>
+          <h1 style={{ marginTop: '10px' }}>{post.title}</h1>
           <img src={post.imageURL} width="300" height="300" />
           <div className='content-bg' style={{ border: '1px solid black', borderRadius: '4px', margin: '10px', padding: '10px' }}>
             <h6 style={{ whiteSpace: 'pre-wrap' }}>
@@ -281,7 +285,7 @@ class PostShow extends Component {
           </div>
           <Button onClick={this.updatePostClicked} variant="primary">Update</Button>
           <Button style={{ marginLeft: '10px' }} onClick={this.onPostDelete} variant="outline-danger">Delete</Button>
-          <h5>Comments:</h5>
+          <h5 style={{ marginTop: '40px' }}>Comments:</h5>
           <div className="showCommentContainer">
             <ul>
               {commentsJsx}
@@ -306,15 +310,15 @@ class PostShow extends Component {
             backdrop="static"
             keyboard={false}
           >
-            <Modal.Header style={{ color: 'blue', backgroundColor: '#114b5f' }} closeButton>
-              <Modal.Title>Update Your Comment!</Modal.Title>
+            <Modal.Header style={{ backgroundColor: '#2e0854' }} closeButton>
+              <Modal.Title style={{ color: 'white' }}>Update Your Comment!</Modal.Title>
             </Modal.Header>
             <Modal.Body style={{ backgroundColor: 'white' }}>
               <Form onSubmit={(event) => {
                 this.handleUpdate(commentId, event)
               }}>
                 <Form.Group controlId="formBasicContent">
-                  <Form.Label>Comment</Form.Label>
+                  <Form.Label style={{ fontSize: '25px' }}>Comment</Form.Label>
                   <Form.Control
                     as="textarea"
                     rows={3}
@@ -323,7 +327,7 @@ class PostShow extends Component {
                     onChange={this.handleChange}
                   />
                 </Form.Group>
-                <Button variant="secondary" onClick={this.handleClose}>
+                <Button style={{ marginRight: '10px' }} variant="secondary" onClick={this.handleClose}>
                   Close
                 </Button>
                 <Button

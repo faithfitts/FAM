@@ -92,10 +92,10 @@ class UpdatePost extends Component {
 
     return (
       <div>
-        <h3>Update Your Post</h3>
+        <h3 style={{ marginTop: '30px', marginBottom: '20px', fontSize: '40px' }}>Update Your Post!</h3>
         <Form onSubmit={this.handleSubmit}>
           <Form.Group controlId="formBasicTitle">
-            <Form.Label>Title</Form.Label>
+            <Form.Label style={{ fontSize: '20px' }}>Title</Form.Label>
             <Form.Control
               type="text"
               name="title"
@@ -105,7 +105,7 @@ class UpdatePost extends Component {
           </Form.Group>
 
           <Form.Group controlId="formBasicPicture">
-            <Form.Label>Image</Form.Label>
+            <Form.Label style={{ fontSize: '20px' }}>Image</Form.Label>
             <Form.Control
               img="true"
               type="text"
@@ -116,7 +116,7 @@ class UpdatePost extends Component {
           </Form.Group>
 
           <Form.Group controlId="formBasicContent">
-            <Form.Label>Content</Form.Label>
+            <Form.Label style={{ fontSize: '20px' }}>Content</Form.Label>
             <Form.Control
               as="textarea"
               rows={3}
@@ -125,7 +125,7 @@ class UpdatePost extends Component {
               onChange={this.handleChange}
             />
           </Form.Group>
-          <Button variant="secondary" onClick={this.handleClose}>
+          <Button style={{ marginRight: '10px' }} variant="secondary" onClick={this.handleClose}>
             Close
           </Button>
           <Button

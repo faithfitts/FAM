@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button'
 const PostForm = ({ post, handleSubmit, handleChange }) => (
   <Form onSubmit={handleSubmit}>
     <Form.Group controlId="formBasicTitle">
-      <Form.Label>Title</Form.Label>
+      <Form.Label style={{ marginTop: '30px', marginBottom: '-20px', fontSize: '20px' }}>Title</Form.Label>
       <Form.Control
         type="text"
         name="title"
@@ -15,7 +15,7 @@ const PostForm = ({ post, handleSubmit, handleChange }) => (
     </Form.Group>
 
     <Form.Group controlId="formBasicPicture">
-      <Form.Label>Image</Form.Label>
+      <Form.Label style={{ marginBottom: '-20px', fontSize: '20px' }}>Image</Form.Label>
       <Form.Control
         img="true"
         type="text"
@@ -26,7 +26,7 @@ const PostForm = ({ post, handleSubmit, handleChange }) => (
     </Form.Group>
 
     <Form.Group controlId="formBasicContent">
-      <Form.Label>Content</Form.Label>
+      <Form.Label style={{ marginBottom: '-20px', fontSize: '20px' }}>Content</Form.Label>
       <Form.Control
         as="textarea"
         rows={4}

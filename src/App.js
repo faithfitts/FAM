@@ -24,6 +24,7 @@ class App extends Component {
     super(props)
     this.state = {
       user: null,
+      admin: 'f@f',
       msgAlerts: []
     }
   }
@@ -46,11 +47,11 @@ class App extends Component {
   }
 
   render () {
-    const { msgAlerts, user } = this.state
+    const { msgAlerts, user, admin } = this.state
 
     return (
       <Fragment>
-        <Header user={user} />
+        <Header user={user} admin={admin}/>
         {msgAlerts.map(msgAlert => (
           <AutoDismissAlert
             key={msgAlert.id}

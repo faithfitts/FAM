@@ -52,7 +52,7 @@ class PostIndexAll extends Component {
       <Card key={post._id} className='content-bg' style={{ border: '5px solid #2e0854', margin: '5px', padding: '5px', width: '17%', marginTop: '10px' }}>
         <Card.Img src={post.imageURL} style={{ height: '18rem' }} />
         <Card.Body>
-          <Card.Title>{post.title}</Card.Title>
+          <Card.Title style={{ fontSize: '33px' }}>{post.title}</Card.Title>
           <Card.Text>{post.content}</Card.Text>
           <Card.Link className='content-sm' href={`#posts/${post._id}`}> Click Here To Learn More!</Card.Link>
         </Card.Body>
@@ -61,7 +61,7 @@ class PostIndexAll extends Component {
 
     return (
       <div className='content-md' style={cardContainerLayout}>
-        { postsJsx.reverse() }
+        { postsJsx }
       </div>
     )
   }

@@ -1,10 +1,10 @@
 $primary: #2e0854;
+$secondary: #be0000;
 
 @import '~bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css2?family=Amiri:ital@1&family=Philosopher&display=swap');
 
 $content-bg: #f5efe7;
-
 .content-bg {
   background-color: $content-bg;
   color: #2e0854;
@@ -12,14 +12,12 @@ $content-bg: #f5efe7;
 
 .content-sm {
   color: green;
-  text-decoration: underline
+  text-decoration: underline;
 }
 
 .content-md {
   padding: 50px;
   display: 'flex';
-  justifyContent: 'center';
-  flexFlow: 'row wrap'
 }
 
 body {
