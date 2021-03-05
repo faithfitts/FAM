@@ -138,6 +138,7 @@ class PostShow extends Component {
 
     showPost(match.params.id, user)
       .then(res => {
+        // console.log(res)
         this.setState({ post: res.data.post, commentsList: res.data.post.comments })
         return res
       })
@@ -170,6 +171,7 @@ class PostShow extends Component {
     }
 
     const userId = user._id
+    // console.log(post)
     const ownerId = post.owner._id
 
     let showDisplay
